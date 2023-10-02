@@ -1,0 +1,15 @@
+# Python 3.11.3
+# pip install --upgrade pip
+# pip install --no-cache-dir -r requirements.txt
+
+fastapi==0.95.1
+uvicorn==0.22.0
+
+#--- Unit Tests ----
+pytest==7.3.1
+pytest-html==3.2.0
+
+#------ ML --------
+numpy==1.23.5
+scikit-learn==1.2.1
+pickle-mixin==1.0.2

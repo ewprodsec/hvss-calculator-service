@@ -1,0 +1,56 @@
+body {
+  background-color: #F0FFF0; /* F0FFF0 E8FFE8 FBFEFB */
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  color: darkgreen;
+}
+
+h2 {
+  color: #254117;
+}
+
+p {
+  color: #666;
+  line-height: 1.5;
+}
+
+fieldset {
+    background: #090;
+    color: #ffffff;
+    border-radius: 10px;
+    font: 15px/1.4em 'Open Sans','OpenSans',sans-serif;
+    padding: 15px;
+}
+
+input {
+    background-color: #E8FFE8;
+    border-color: white;
+    border-radius: 5px;
+    padding: 5px 10px;
+
+}
+
+.container {
+  width: 800px;
+  margin: 0 auto;
+  padding: 40px;
+  border: 1px solid #E8FFE8;
+}
+
+#vectorString {
+    border: 0;
+    padding: 10px;
+    margin: 0 20px 0 10px;
+    background-color: #E8FFE8;
+    font-size: 1em;
+    width: 60%;
+}
+
+#resultPanel {
+    margin: 20px 0px;
+    padding: 0px 30px;
+    border: 1px solid #090;
+    border-radius: 10px;
+}

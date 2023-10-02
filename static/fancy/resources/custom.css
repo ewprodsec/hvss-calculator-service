@@ -1,0 +1,120 @@
+/* Base Score Panel with Exploitability Subscore */
+
+#scoreMainPanel {
+    display: block;
+}
+
+#scoreMainPanel div {
+    display: inline-block;
+    vertical-align: top;
+    /* border: 1px solid orange; */
+}
+
+#baseScorePanel {
+    padding-right: 50px;
+    vertical-align: top;
+    text-align: right;
+    font-size: medium;
+}
+
+#expRankPanel {
+    padding: 10px;
+    margin: 10px 20px 0px 50px;
+    color: white;
+    background-color: white;
+    border-radius: 10px;
+    font-size: large;
+    font-weight: bold;
+    text-align: center;
+}
+
+#XIT_Heading {
+    margin-top: 1.5em;
+    font-size: 1.2em;
+}
+
+#errorPanel {
+text-align:center;
+    font-size: 1.1em;
+    color: red;
+    visibility: hidden;
+    /* visibility: visible; hidden; */
+}
+
+#buildNumberPanel {
+    float: right;
+    color: #666666;
+    font-size: x-small;
+}
+
+.hvss-logo-text {
+    /*
+    https://graphicmama.com/blog/the-best-handwriting-fonts/
+    'Brush Script MT'
+    'Great Vibes'
+    'Italianno'
+    'Dancing Script'
+    */
+    font-family: 'Italianno';
+    font-size: 7em;
+    font-weight: bold;
+    color: #505052;
+}
+
+.hvss-logo-text-v {
+    font-size: 1.3em;
+    color: #ED2228;
+}
+
+p.hvss-logo-text {
+    padding: 0.5em 0 0.5em 0;
+}
+
+div#hvss-logo {
+    padding: 15px 0 0 0;
+}
+
+.tabcontent {
+    margin-top: 1.5em;
+    padding-left: 2em;
+    border-left: 3px double #00400D;
+    display: none;
+}
+
+.border {
+    border: 1px solid white;
+    /* border: 1px solid red; */
+}
+
+.border_red {
+    border: 1px solid red;
+}
+
+/* Score Table */
+
+table.GeneratedTable {
+    background-color: #ffffff;
+    border-collapse: collapse;
+    border-width: 2px;
+    border-color: #f2f2f2;
+    border-style: solid;
+    color: #000;
+}
+
+table.GeneratedTable td,
+table.GeneratedTable th {
+    border-width: 2px;
+    border-color: #f2f2f2;
+    border-style: solid;
+    padding: 5px 10px;
+    text-align: center;
+}
+
+table.GeneratedTable th {
+    font-weight: normal;
+}
+
+table.GeneratedTable thead {
+    color: #ffffff;
+    background-color: #666;
+}
