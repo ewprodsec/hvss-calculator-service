@@ -1,4 +1,4 @@
-# HVSS Calculator Backend Service
+# HVSS Calculator Web Service
 
 ## Build, Publish and Run the Docker Image
 
@@ -7,7 +7,7 @@
 ~~~~sh
 # Build the Docker Image
 IMAGE_NAME='hvss-calculator-service'
-IMAGE_REPO='ivanenko'
+IMAGE_REPO='ewproductsecurity'
 IMAGE_TAG="$IMAGE_REPO/$IMAGE_NAME:latest"
 echo $IMAGE_TAG
 
@@ -32,8 +32,8 @@ docker push $IMAGE_TAG
 # Pull the image from the repository
 echo $IMAGE_TAG
 docker pull $IMAGE_TAG
-# or
-docker pull ivanenko/hvss-calculator-service
+# or just
+docker pull ewproductsecurity/hvss-calculator-service
 ~~~~
 
 ### Run the Docker Container
@@ -43,11 +43,13 @@ docker pull ivanenko/hvss-calculator-service
 PORT='8088'
 
 docker run -it --rm -p $PORT:8000 $IMAGE_TAG
-docker run -it --rm -p 8088:8000 ivanenko/hvss-calculator-service
+# or just
+docker run -it --rm -p 8088:8000 ewproductsecurity/hvss-calculator-service
 
 # -d - run as a daemon
 docker run -it -d --rm -p $PORT:8000 $IMAGE_TAG
-docker run -it -d --rm -p 8088:8000 ivanenko/hvss-calculator-service
+# or just
+docker run -it -d --rm -p 8088:8000 ewproductsecurity/hvss-calculator-service
 ~~~~
 
 - Open the Calculator web app: <http://localhost:8088/>
@@ -78,16 +80,11 @@ pip install pytest-html
 python -m pytest -v --html=report.html
 ````
 
-### Run
+### Run Dev Server
 
 ````sh
+# start Uvicorn (a simple ASGI web server for Python)
 uvicorn main:app --reload
-
-#http://127.0.0.1:8000/
-
-#Check the Interactive API Documentation
-#http://127.0.0.1:8000/docs
-
 ````
 
 - Open web UI <http://127.0.0.1:8000/>
