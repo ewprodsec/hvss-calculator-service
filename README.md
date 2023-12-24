@@ -2,7 +2,7 @@
 
 This open source project aims to promote adoption of the Healthcare Vulnerability Scoring System (HVSS) &copy; through an easy to use and integrate reference implementation.
 
-The HVSS&copy; Calculator Web Service provides a simple web application to interact with [HVSS&copy; Calculator machine learning models](https://github.com/ewprodsec/hvss-calculator-lab).
+The HVSS&copy; Calculator Web Service provides a simple web application to interact with the [HVSS&copy; Calculator Machine Learning (ML) Models](https://github.com/ewprodsec/hvss-calculator-lab).
 
 The project includes both frontend and backend components:
 - The frontend is a vanilla HTML, JavaScript, and CSS application for simplicity.
@@ -11,12 +11,11 @@ The project includes both frontend and backend components:
 - The Dockerfile and [public container image](https://hub.docker.com/r/ewproductsecurity/hvss-calculator-service) available on Docker Hub to facilitate containerized deployment.
 - The container image is self-contained and dependency-free, allowing for easy local runtime execution.
 
-## HVSS&copy; Calculator machine learning models
+## HVSS&copy; Calculator Machine Learning (ML) Models
 
-The HVSS&copy; Calculator machine learning models are a core component of the current HVSS calculator implementation.
+The HVSS&copy; Calculator ML models are a core component of the current HVSS calculator implementation.
 
 This project utilizes pre-built and ready-to-use models located in the `./hvss_calc/Models` directory. These models will be upgraded as new versions become available at the original [HVSS Machine Learning Training Lab](https://github.com/ewprodsec/hvss-calculator-lab) project.
-
 
 
 ## How to Build, Publish and Run the Docker Image
@@ -79,7 +78,6 @@ docker run -it -d --rm -p 8088:8000 ewproductsecurity/hvss-calculator-service:la
 - Interactive API Documentation ([Swagger UI](https://github.com/swagger-api/swagger-ui)): <http://localhost:8088/docs>
 - Alternative Interactive API Documentation ([ReDoc](https://github.com/Redocly/redoc)): <http://localhost:8088/redoc>
 
----
 
 ## Development Time Notes
 
@@ -115,13 +113,21 @@ uvicorn main:app --reload
 - Interactive API Documentation ([Swagger UI](https://github.com/swagger-api/swagger-ui)): <http://127.0.0.1:8000/docs>
 - Alternative Interactive API Documentation ([ReDoc](https://github.com/Redocly/redoc)): <http://127.0.0.1:8000/redoc>
 
----
 
 ## Known Bugs and TODO
 
 - Disable sending S:U to the backend
 
----
+
+## Support
+
+The source code of the project is provided on "as is" terms with no warranty (see license for more information). Do not file Github issues with generic support requests.
+
+
+## License
+
+This project is released under the terms of the GNU Lesser General Public License (LGPL). See LICENSE file for details.
+
 
 ## Acknowledgments
 This project was originally created by the HVSS Working Group, founded by the Product Security Team of [Edwards Lifesciences](https://www.edwards.com):
