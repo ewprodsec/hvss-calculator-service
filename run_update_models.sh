@@ -12,7 +12,7 @@ BG_MAGENTA=45
 BG_CYAN=46
 
 # Source project configuration
-SOURCE_PROJECT_DIR='../hvss-ml-lab'
+SOURCE_PROJECT_DIR='../hvss-calculator-lab'
 
 if [ ! -z "$1" ]; then
     SOURCE_PROJECT_DIR="$1"
@@ -20,8 +20,8 @@ else
     echo -e "\nNo Source project directory specified, using default:\t$SOURCE_PROJECT_DIR\n"
 fi
 
-SOURCE_PROJECT_MODELS_DIR="$SOURCE_PROJECT_DIR/HVSS_ML_Lab/Code/Models"
-SOURCE_PROJECT_TRAINING_DATA_FILE="$SOURCE_PROJECT_DIR/HVSS_ML_Lab/TrainingData.xlsx"
+SOURCE_PROJECT_MODELS_DIR="$SOURCE_PROJECT_DIR/models"
+SOURCE_PROJECT_TRAINING_DATA_FILE="$SOURCE_PROJECT_DIR/TrainingData.xlsx"
 
 TARGET_PROJECT_DIR="$(pwd)"
 TARGET_PROJECT_MODELS_DIR="$TARGET_PROJECT_DIR/hvss_calc/Models"
