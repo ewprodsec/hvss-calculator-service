@@ -1,6 +1,25 @@
-# HVSS Calculator Web Service
+# HVSS&copy; Calculator Web Service
 
-## Build, Publish and Run the Docker Image
+This open source project aims to promote adoption of the Healthcare Vulnerability Scoring System (HVSS) &copy; through an easy to use and integrate reference implementation.
+
+The HVSS&copy; Calculator Web Service provides a simple web application to interact with [HVSS&copy; Calculator machine learning models](https://github.com/ewprodsec/hvss-calculator-lab).
+
+The project includes both frontend and backend components:
+- The frontend is a vanilla HTML, JavaScript, and CSS application for simplicity.
+- The backend uses Python (FastAPI) to implement a REST API. This allows the frontend to be replaced or for the API to be leveraged by other workflows.
+- The interactive API documentation using OpenAPI and ReDoc for discoverability.
+- The Dockerfile and [public container image](https://hub.docker.com/r/ewproductsecurity/hvss-calculator-service) available on Docker Hub to facilitate containerized deployment.
+- The container image is self-contained and dependency-free, allowing for easy local runtime execution.
+
+## HVSS&copy; Calculator machine learning models
+
+The HVSS&copy; Calculator machine learning models are a core component of the current HVSS calculator implementation.
+
+This project utilizes pre-built and ready-to-use models located in the `./hvss_calc/Models` directory. These models will be upgraded as new versions become available at the original [HVSS Machine Learning Training Lab](https://github.com/ewprodsec/hvss-calculator-lab) project.
+
+
+
+## How to Build, Publish and Run the Docker Image
 
 ### Build
 
@@ -12,6 +31,8 @@ IMAGE_TAG="$IMAGE_REPO/$IMAGE_NAME:latest"
 echo $IMAGE_TAG
 
 docker build -t $IMAGE_TAG .
+# or just
+docker build -t ewproductsecurity/hvss-calculator-service:latest
 ~~~~
 
 ### Publish
@@ -24,6 +45,8 @@ echo $IMAGE_TAG
 docker login -u <your-docker-login>
 
 docker push $IMAGE_TAG
+# or just
+docker push ewproductsecurity/hvss-calculator-service:latest
 ~~~~
 
 ### Pull
@@ -33,7 +56,7 @@ docker push $IMAGE_TAG
 echo $IMAGE_TAG
 docker pull $IMAGE_TAG
 # or just
-docker pull ewproductsecurity/hvss-calculator-service
+docker pull ewproductsecurity/hvss-calculator-service:latest
 ~~~~
 
 ### Run the Docker Container
@@ -44,12 +67,12 @@ PORT='8088'
 
 docker run -it --rm -p $PORT:8000 $IMAGE_TAG
 # or just
-docker run -it --rm -p 8088:8000 ewproductsecurity/hvss-calculator-service
+docker run -it --rm -p 8088:8000 ewproductsecurity/hvss-calculator-service:latest
 
 # -d - run as a daemon
 docker run -it -d --rm -p $PORT:8000 $IMAGE_TAG
 # or just
-docker run -it -d --rm -p 8088:8000 ewproductsecurity/hvss-calculator-service
+docker run -it -d --rm -p 8088:8000 ewproductsecurity/hvss-calculator-service:latest
 ~~~~
 
 - Open the Calculator web app: <http://localhost:8088/>
@@ -58,7 +81,7 @@ docker run -it -d --rm -p 8088:8000 ewproductsecurity/hvss-calculator-service
 
 ---
 
-## Development
+## Development Time Notes
 
 ### Environment
 
@@ -71,7 +94,7 @@ pip install --no-cache-dir -r requirements.txt
 
 ### Unit Tests and Test Reports
 
-To avoid pytest 'Module not found' error even if module exists, call `python -m pytest` instead of just `pytest`:
+To avoid pytest `Module not found` error even if module exists, call `python -m pytest` instead of just `pytest`:
 
 ````sh
 python -m pytest -v
@@ -92,6 +115,22 @@ uvicorn main:app --reload
 - Interactive API Documentation ([Swagger UI](https://github.com/swagger-api/swagger-ui)): <http://127.0.0.1:8000/docs>
 - Alternative Interactive API Documentation ([ReDoc](https://github.com/Redocly/redoc)): <http://127.0.0.1:8000/redoc>
 
-## TODO
+---
+
+## Known Bugs and TODO
 
 - Disable sending S:U to the backend
+
+---
+
+## Acknowledgments
+This project was originally created by the HVSS Working Group, founded by the Product Security Team of [Edwards Lifesciences](https://www.edwards.com):
+- Oleg Yusim
+- Jacob Barkai
+- Tejas Bharambe
+- Roman Ivanenko
+- Samuel Takachicha
+- Vinitha Mathiyazhagan
+- Maddy Tamilthurai
+- Aleksey Haytman
+- Isaias Rivera
