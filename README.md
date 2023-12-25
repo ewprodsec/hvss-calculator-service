@@ -133,9 +133,9 @@ This project is released under the terms of the GNU Lesser General Public Licens
 This project was originally created by the HVSS Working Group, founded by the Product Security Team of [Edwards Lifesciences](https://www.edwards.com):
 - Oleg Yusim
 - Jacob Barkai
-- Tejas Bharambe
 - Roman Ivanenko
 - Samuel Takachicha
+- Tejas Bharambe
 - Vinitha Mathiyazhagan
 - Maddy Tamilthurai
 - Aleksey Haytman
