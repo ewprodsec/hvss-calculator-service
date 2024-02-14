@@ -1,0 +1,40 @@
+# Builds a Docker image and pushes it to the Docker Hub registry.
+name: Docker Image CI
+
+on:
+  workflow_dispatch:
+  # push:
+  #   branches: [ "main" ]
+  # pull_request:
+  #   branches: [ "main" ]
+
+env:
+  REGISTRY: docker.io
+  IMAGE_NAME: ewproductsecurity/hvss-calculator-service
+  DOCKERFILE: Dockerfile
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build & push Docker image
+        uses: mr-smithers-excellent/docker-build-push@v6
+        with:
+          image: ${{ env.IMAGE_NAME }}
+          addLatest: true
+          addTimestamp: true
+          registry: ${{ env.REGISTRY }}
+          dockerfile: ${{ env.DOCKERFILE }}
+          username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_PASSWORD }}
+
+      - name: Show Docker Image list
+        run: docker image ls
