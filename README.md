@@ -1,5 +1,9 @@
 # HVSS&copy; Calculator Web Service
 
+<!-- GitHub Action status badges: start -->
+[![Docker Image CI](https://github.com/ewprodsec/hvss-calculator-service/actions/workflows/docker-ci.yml/badge.svg?branch=main)](https://github.com/ewprodsec/hvss-calculator-service/actions/workflows/docker-ci.yml)
+<!-- GitHub Action status badges: end -->
+
 This open source project aims to promote adoption of the Healthcare Vulnerability Scoring System (HVSS) &copy; through an easy to use and integrate reference implementation.
 
 The HVSS&copy; Calculator Web Service provides a simple web application to interact with the [HVSS&copy; Calculator Machine Learning (ML) Models](https://github.com/ewprodsec/hvss-calculator-lab).
