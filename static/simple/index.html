@@ -1,48 +1,62 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8YJF64KE98"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-8YJF64KE98');
+    </script>
     <title>HVSS Calculator</title>
-    <link rel="shortcut icon" href="calculator_blue.png"/>
+    <link rel="shortcut icon" href="calculator_blue.png" />
     <link rel="stylesheet" type="text/css" href="style.css">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 </head>
+
 <body>
-<div class="container">
-    <h1>Healthcare Vulnerability Scoring System (HVSS) Version 1.0 Calculator. ©</h1>
-    <h2>CVSS v3.1 with Enhanced Impact and Attack Complexity edition.</h2>
-    <p>Hover over metric group names, metric names and metric values for a summary of the information in the official
-        CVSS v3.1 and HVSS v1.0 Specification Documents.
-        The Specification is available in the list of links on the left, along with a User Guide providing additional
-        scoring guidance, an Examples document of scored vulnerabilities, and notes on using this calculator.</p>
-    <br/>
+    <div class="container">
+        <h1>Healthcare Vulnerability Scoring System (HVSS) Version 1.0 Calculator. ©</h1>
+        <h2>CVSS v3.1 with Enhanced Impact and Attack Complexity edition.</h2>
+        <p>Hover over metric group names, metric names and metric values for a summary of the information in the
+            official
+            CVSS v3.1 and HVSS v1.0 Specification Documents.
+            The Specification is available in the list of links on the left, along with a User Guide providing
+            additional
+            scoring guidance, an Examples document of scored vulnerabilities, and notes on using this calculator.</p>
+        <br />
 
-    <fieldset style="background:#090; color:#ffffff; border-radius:10px">
-        <label for="vectorString">Vector String:</label>
-        <input id="vectorString" type="text" name="vector"
-               value="HVSS:1.0/AV:N/EAC:N/PR:N/UI:N/S:U/XIT:XCIA/C:H/I:L/A:N">
-        <input id="submit" type="submit" value="Submit">
-    </fieldset>
-    <div id="resultPanel">
-        <p>Result:</p>
-        <p id="response"></p></div>
-</div>
+        <fieldset style="background:#090; color:#ffffff; border-radius:10px">
+            <label for="vectorString">Vector String:</label>
+            <input id="vectorString" type="text" name="vector"
+                value="HVSS:1.0/AV:N/EAC:N/PR:N/UI:N/S:U/XIT:XCIA/C:H/I:L/A:N">
+            <input id="submit" type="submit" value="Submit">
+        </fieldset>
+        <div id="resultPanel">
+            <p>Result:</p>
+            <p id="response"></p>
+        </div>
+    </div>
 
-<script type="text/javascript">
+    <script type="text/javascript">
         $(document).ready(function () {
-		 $('#submit').click(function(){
-		    vectorString = $('input#vectorString').val();
-		    console.log("vectorString: ", vectorString);
-			$.getJSON('/score', {vector: vectorString }, function (data, textStatus, jqXHR) {
-				console.log("data: ", data);
-				dataStr = JSON.stringify(data, null, 2);
-				$('#resultPanel').append("<pre>" + dataStr + "</pre>");
-			})
-			.done(function () { console.log('Request done!'); })
-			.fail(function (jqxhr,settings,ex) { console.log('failed, '+ ex); });
-		});
-    });
+            $('#submit').click(function () {
+                vectorString = $('input#vectorString').val();
+                console.log("vectorString: ", vectorString);
+                $.getJSON('/score', { vector: vectorString }, function (data, textStatus, jqXHR) {
+                    console.log("data: ", data);
+                    dataStr = JSON.stringify(data, null, 2);
+                    $('#resultPanel').append("<pre>" + dataStr + "</pre>");
+                })
+                    .done(function () { console.log('Request done!'); })
+                    .fail(function (jqxhr, settings, ex) { console.log('failed, ' + ex); });
+            });
+        });
 
-</script>
+    </script>
 
 </body>
+
 </html>
